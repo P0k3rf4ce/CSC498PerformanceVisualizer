@@ -36,7 +36,8 @@ export default function Upload() {
 
         setStatus('success');
         setUploadProgress(100); 
-      } catch {
+      } 
+      catch {
         setStatus('error');
         setUploadProgress(0);
       }
@@ -51,7 +52,7 @@ export default function Upload() {
             <div>
               <div 
               className="h-2.5 rounded-full bg-blue-600 transition-all duration-300"
-              style={{ width: '${uploadprogress}%' }}>
+              style={{ width: `${uploadprogress}%` }}>
               </div>
               <p className="text-sm text-gray-600">{uploadprogress}% uploaded</p>
             </div>
