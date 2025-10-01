@@ -1,15 +1,19 @@
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Upload from './pages/Upload'
-import GraphDisplay from './pages/GraphDisplay'
-import LineGraph from './components/LineGraph';
+// import GraphDisplay from './pages/GraphDisplay'
 
 function App() {
 
   return (
     <div>
       <Upload />
-      <GraphDisplay />
-      <LineGraph />
+      <BrowserRouter>
+        <Routes>
+          <Route path='upload' element={<Upload />} />
+        </Routes>
+      </BrowserRouter>
     </div>
+
   );
 }
 

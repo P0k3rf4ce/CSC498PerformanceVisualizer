@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, type ChangeEvent } from "react";
+import { Button } from "@mui/material";
 
 type UploadStatus = 'idle' | 'uploading' | 'success' | 'error'
 
@@ -46,7 +47,14 @@ export default function Upload() {
 
   return (
       <div>
-          <input type="file" onChange={FileChange} />
+          <Button
+            component="label"
+            variant="outlined"
+            sx={{ marginRight: "1rem" }} 
+          >
+            Upload File
+            <input type="file" hidden onChange={FileChange} />
+          </Button>
 
           {status == 'uploading' && (
             <div>
@@ -60,9 +68,10 @@ export default function Upload() {
 
           }
 
-          {file && status != "uploading" && <button onClick={FileUploaded}>Upload</button>}
+          {file && status != "uploading" && <Button variant="contained" onClick={FileUploaded}>Upload</Button>}
 
           {status == 'success' && (
+            
             <p>
               Good
             </p>
