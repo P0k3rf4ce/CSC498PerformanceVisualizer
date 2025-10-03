@@ -12,7 +12,7 @@ export const datas = {
     datasets: [
         {
             label: "Steps",
-            data: [30,-20,40,60,10,40,20,35],
+            data: [30,-20,50,50,10,40,20,35],
             borderColor: "rgb(75, 192, 192)",
         },
     ],

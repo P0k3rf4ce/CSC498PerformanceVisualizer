@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, type ChangeEvent } from "react";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 type UploadStatus = 'idle' | 'uploading' | 'success' | 'error'
 
@@ -9,6 +10,8 @@ export default function Upload() {
   const [file, setfFile] = useState<File | null>(null);    
   const [status, setStatus] = useState<UploadStatus>("idle");
   const [uploadprogress, setUploadProgress] = useState(0);
+  const nav = useNavigate();
+
 
   function FileChange(x: ChangeEvent<HTMLInputElement>) {
       if (x.target.files) {
@@ -47,6 +50,7 @@ export default function Upload() {
 
   return (
       <div>
+          <Button onClick={() => nav("/graphdisplay")}>Go to graph</Button>
           <Button
             component="label"
             variant="outlined"

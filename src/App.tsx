@@ -1,17 +1,16 @@
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import Upload from './pages/Upload'
-// import GraphDisplay from './pages/GraphDisplay'
+import GraphDisplay from "./pages/GraphDisplay"
 
 function App() {
 
   return (
-    <div>
-      <Upload />
-      <BrowserRouter>
+    <div>      
+        <Upload />
         <Routes>
-          <Route path='upload' element={<Upload />} />
+            <Route path='/' element={<Upload />}/>
+            <Route path='/graphdisplay' element={<GraphDisplay />}/>
         </Routes>
-      </BrowserRouter>
     </div>
 
   );
